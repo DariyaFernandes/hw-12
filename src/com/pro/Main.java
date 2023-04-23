@@ -6,9 +6,11 @@ import com.Main.Author;
 
 public class Main {
 
+
+
     public static void main(String[] args) {
         Author pushkin = new Author("Alexandr" , "Pushkin");
-        Author bulgakov = new Author("Mikhail" , " Bulgakov");
+        Author bulgakov = new Author("Mikhail" , "Bulgakov");
         Book ryslanILydmila = new Book("Ryslan I Lydmila" , pushkin, 1987);
         Book masterIMargarita = new Book("Master I Margarita" , bulgakov , 1940);
 
@@ -28,6 +30,14 @@ public class Main {
 
         masterIMargarita.setYear(2005);
         System.out.println("Год издания masterIMargarita " + masterIMargarita.getYear());
+
+        Author a1 = new Author("Mikhail" , "Bulgakov");
+        Author a2 = new Author("Mikhail" , "Bulgakov");
+
+        System.out.println(a1 == a2);
+        System.out.println(a1.equals(a2));
+
+
 
 
 
