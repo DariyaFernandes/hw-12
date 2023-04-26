@@ -6,13 +6,16 @@ import java.util.Objects;
 public class Author {
     private String name;
 
+
     private String surname;
+
     public Author(String name, String surname) {
         this.name = name;
         this.surname = surname;
         System.out.println("Создан автор " + name + " " + surname);
 
     }
+
     public String getName() {
         return name;
     }
@@ -33,14 +36,19 @@ public class Author {
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (surname != null ? surname.hashCode() : 0);
-        return result;
+        return Objects.hash(name, surname);
     }
 
+    @Override
+    public String toString() {
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
 
 
     }
+}
 
 
 

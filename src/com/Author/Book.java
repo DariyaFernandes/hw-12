@@ -8,7 +8,10 @@ public class Book {
     private String name;
 
 
+
     private Author author;
+
+
     private int year;
 
     public Book(String name, Author author, int year) {
@@ -17,6 +20,7 @@ public class Book {
         this.year = year;
 
     }
+
     public String getName() {
         return name;
     }
@@ -29,6 +33,7 @@ public class Book {
     public int getYear() {
         return year;
     }
+
     public void setYear(int year) {
         this.year = year;
     }
@@ -45,12 +50,20 @@ public class Book {
         if (!Objects.equals(name, book.name)) return false;
         return Objects.equals(author, book.author);
     }
-
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (author != null ? author.hashCode() : 0);
-        result = 31 * result + year;
-        return result;
+        return Objects.hash(name, author, year);
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", author=" + author +
+                ", year=" + year +
+                '}';
+    }
+
 }
+
+
